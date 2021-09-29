@@ -32,16 +32,16 @@ public class ProductosRest {
         return productosRepository.findByNombreCompleto(nombreCompleto);
     }
     
+    @GetMapping("/api/productos/cantidad/{cantidad}")
+    public List<Productos>findByCantidad(@PathVariable("cantidad") String cantidad){
+        return productosRepository.findByCantidad(cantidad);
+    }
+    
     /* @GetMapping("/api/productos/id/{id}")
     public List<Productos>findById(@PathVariable("valor") String id){
         return productosRepository.findById(id);
     }
 
-    
-    @GetMapping("/api/productos/cantidad/{cantidad}")
-    public List<Productos>findByCantidad(@PathVariable("cantidad") String cantidad){
-        return productosRepository.findByCantidad(cantidad);
-    }
     
     @GetMapping("/api/productos/descripcion/{descripcion}")
     public List<Productos>findByDescripcion(@PathVariable("descripcion") String descripcion){
